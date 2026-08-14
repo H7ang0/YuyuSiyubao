@@ -1,0 +1,9 @@
+Package: com.yuyu.siyubao
+Name: 屿宇私域宝
+Version: 0.1.0
+Architecture: iphoneos-arm
+Description: Adds a voice-pack entrance to the Kuaishou private-message plus panel.
+Maintainer: h7ang0
+Author: h7ang0
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)

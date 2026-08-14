@@ -1,0 +1,10 @@
+{
+  Filter = {
+    Bundles = (
+      "com.smile.gifmaker",
+      "com.kuaishou.gif",
+      "com.gifshow.kuaishou",
+      "com.kwai.video"
+    );
+  };
+}

@@ -1,0 +1,10 @@
+.theos/
+obj/
+.DS_Store
+
+# Local reverse-engineering dumps / unrelated header snapshots.
+siwenjiajia_runtime_headers.h
+
+# Keep packaged release artifacts only when intentionally added.
+packages/*.deb
+!packages/com.yuyu.siyubao_0.1.0-2+debug_iphoneos-arm.deb

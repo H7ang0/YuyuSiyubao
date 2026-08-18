@@ -8,3 +8,9 @@ siwenjiajia_runtime_headers.h
 # Keep packaged release artifacts only when intentionally added.
 packages/*.deb
 !packages/com.yuyu.siyubao_0.1.0-2+debug_iphoneos-arm.deb
+!packages/com.yuyu.siyubao_0.1.0-3+debug_iphoneos-arm.deb
+!packages/com.yuyu.siyubao_0.1.0-4+debug_iphoneos-arm.deb
+!packages/com.yuyu.siyubao_0.1.0-5+debug_iphoneos-arm.deb
+!packages/com.yuyu.siyubao_0.1.0-6+debug_iphoneos-arm.deb
+!packages/com.yuyu.siyubao_0.1.0-7+debug_iphoneos-arm.deb
+!packages/com.yuyu.siyubao_0.1.0-8+debug_iphoneos-arm.deb

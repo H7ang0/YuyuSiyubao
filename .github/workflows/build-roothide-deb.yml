@@ -1,0 +1,41 @@
+name: Build Roothide DEB
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install build tools
+        run: brew install ldid make perl
+
+      - name: Install Roothide Theos
+        run: |
+          git clone --depth 1 https://github.com/roothide/theos.git "$HOME/theos"
+          git clone --depth 1 https://github.com/theos/sdks.git "$HOME/theos/sdks"
+          echo "THEOS=$HOME/theos" >> "$GITHUB_ENV"
+          echo "$HOME/theos/bin" >> "$GITHUB_PATH"
+
+      - name: Build Roothide package
+        run: |
+          make clean
+          make package THEOS_PACKAGE_SCHEME=roothide FINALPACKAGE=1
+          mkdir -p dist
+          find packages -maxdepth 1 -name '*.deb' -exec cp {} dist/ \;
+          test -n "$(find dist -maxdepth 1 -name '*.deb' -print -quit)"
+
+      - name: Upload DEB
+        uses: actions/upload-artifact@v4
+        with:
+          name: YuyuSiyubao-Roothide-DEB
+          path: dist/*.deb
+          if-no-files-found: error
